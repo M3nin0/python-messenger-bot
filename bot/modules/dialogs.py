@@ -1,4 +1,6 @@
-class Dialog():
+import requests
+
+class Dialog(object):
     '''
         Classe de diálogos
     '''
@@ -84,3 +86,23 @@ class Dialog():
                     'payload': { 'attachment_id' : media_id }
                 } } }
         
+
+    @staticmethod
+    def get_fb_date(user_id, fb_site_token):
+        '''
+            Método que coleta informações do usuário através do user_id
+
+            :param user_id: str (id do usuário)
+            :param fb_site_token: str (Token da API do Facebook)
+
+            :return list
+        '''
+
+        r = requests.get(
+            'https://graph.facebook.com/v2.6/' + str(user_id) 
+                                               + '?access_token=' +  fb_site_token
+        )
+
+        _infos = r.json()
+        
+        return [ _infos['first_name' ] , _infos[ 'last_name' ] , _infos[ 'gender' ] ]
