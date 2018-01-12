@@ -1,4 +1,4 @@
-# python-messenger-bot - Template
+# Python Messenger Bot - Template
 
 Template para bots do Facebook
 
