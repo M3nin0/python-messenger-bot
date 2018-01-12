@@ -18,3 +18,7 @@ migrate = Migrate(app, db)
 # Configurando o meneger da aplicação
 manager = Manager(app)
 manager.add_command('db', MigrateCommand)
+
+# Importando o bot
+from bot.modules.chat import bot
+from bot.modules import tables

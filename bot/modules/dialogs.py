@@ -1,10 +1,35 @@
 import requests
 
+from modules.toolbox import ToolBox
+
+FB_SITE_TOKEN, FB_VERIFY_TOKEN = ToolBox.load_config()
+
 class Dialog(object):
     '''
         Classe de diálogos
     '''
 
+    @staticmethod
+    def send_payload(payload):
+        '''
+            Método para envio de payloads
+
+            :param payload: str (Dicionário com as informações para envio)
+                - Exemplo:
+                    { 'recipient' : { 'id' : user_id }, 'message' :  'texto legal' }
+                - Este pode ser um payload gerado pelos método:
+                    - send_greeting();
+                    - send_get_started();
+                    - send_buttons();
+                    - send_media_attached().
+
+            :return void
+        '''
+
+        requests.post(
+            'https://graph.facebook.com/v2.6/me/messages/?access_token=' + fb_site_token,
+            json = payload
+        )
 
     @staticmethod
     def send_greeting(text_default, locale, text_for_locale):
