@@ -25,7 +25,7 @@ class Dialog(object):
         '''
 
         requests.post(
-            'https://graph.facebook.com/v2.6/me/messages/?access_token=' + FB_SITE_TOKEN[0],
+            'https://graph.facebook.com/v2.6/me/messages/?access_token=' + FB_SITE_TOKEN,
             json = payload
         )
 
@@ -46,7 +46,7 @@ class Dialog(object):
         '''
 
         requests.post(
-                'https://graph.facebook.com/v2.6/me/messenger_profile?access_token=' + FB_VERIFY_TOKEN[0],
+                'https://graph.facebook.com/v2.6/me/messenger_profile?access_token=' + FB_VERIFY_TOKEN,
                 json = payload
             )
 
