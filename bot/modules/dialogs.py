@@ -18,8 +18,6 @@ class Dialog(object):
                 - Exemplo:
                     { 'recipient' : { 'id' : user_id }, 'message' :  'texto legal' }
                 - Este pode ser um payload gerado pelos método:
-                    - send_greeting();
-                    - send_get_started();
                     - send_buttons();
                     - send_media_attached().
 
@@ -27,9 +25,31 @@ class Dialog(object):
         '''
 
         requests.post(
-            'https://graph.facebook.com/v2.6/me/messages/?access_token=' + FB_SITE_TOKEN,
+            'https://graph.facebook.com/v2.6/me/messages/?access_token=' + FB_SITE_TOKEN[0],
             json = payload
         )
+
+
+    @staticmethod
+    def send_config(payload):
+        '''
+            Método para envio de payloads de configuração
+
+            :param payload: str (Dicionário com as informações)
+                - Exemplo:
+                    { 'get_started' : { 'payload' : 'text' } }
+                - Este método pode ser usado com os seguintes métodos existentes:
+                    - send_greeting();
+                    - send_get_started().
+
+            :return void
+        '''
+
+        requests.post(
+                'https://graph.facebook.com/v2.6/me/messenger_profile?access_token=' + FB_VERIFY_TOKEN[0],
+                json = payload
+            )
+
 
     @staticmethod
     def send_greeting(text_default, locale, text_for_locale):

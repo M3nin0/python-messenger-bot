@@ -20,8 +20,10 @@ Os métodos já criados e disponíveis para uso são:
     - Método para fazer o envio de medias (Videos, images)
  - [X] send_payload;
     - Método para envio de payloads
- - [X] get_fb_date
+ - [X] get_fb_date;
     - Método que coleta informações do usuário através do user_id
+ - [X] send_config.
+    - Método para envio de payloads de configuração
 
 ## Armazenamento 
 
