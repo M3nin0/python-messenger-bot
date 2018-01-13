@@ -8,6 +8,8 @@ from bot import manager
 from flask import request
 
 from bot.modules.toolbox import ToolBox
+from bot.modules.tables import User
+from bot.modules.dialogs import Dialog
 
 FB_SITE_TOKEN, FB_VERIFY_TOKEN = ToolBox.load_config()
 

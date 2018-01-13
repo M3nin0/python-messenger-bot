@@ -14,7 +14,7 @@ class ToolBox(object):
             :return list
         '''
 
-        with open('chatbon/config/config.json') as temp_json:
+        with open('bot/config/config.json') as temp_json:
             try:
                 data = json.load(temp_json)
                 return [ data['tokens']['fb_site_token' ] , [ data['tokens']['fb_verify_token'] ] ]

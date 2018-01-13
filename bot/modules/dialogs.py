@@ -1,6 +1,6 @@
 import requests
 
-from modules.toolbox import ToolBox
+from bot.modules.toolbox import ToolBox
 
 FB_SITE_TOKEN, FB_VERIFY_TOKEN = ToolBox.load_config()
 
@@ -27,7 +27,7 @@ class Dialog(object):
         '''
 
         requests.post(
-            'https://graph.facebook.com/v2.6/me/messages/?access_token=' + fb_site_token,
+            'https://graph.facebook.com/v2.6/me/messages/?access_token=' + FB_SITE_TOKEN,
             json = payload
         )
 
@@ -125,7 +125,7 @@ class Dialog(object):
 
         r = requests.get(
             'https://graph.facebook.com/v2.6/' + str(user_id) 
-                                               + '?access_token=' +  fb_site_token
+                                               + '?access_token=' +  FB_SITE_TOKEN
         )
 
         _infos = r.json()
