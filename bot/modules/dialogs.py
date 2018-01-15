@@ -12,14 +12,15 @@ class Dialog(object):
     @staticmethod
     def send_payload(payload):
         '''
-            Método para envio de payloads
+            Método para envio de payloads. Este método permite enviar payloads que ainda não tem métodos
 
             :param payload: str (Dicionário com as informações para envio)
                 - Exemplo:
                     { 'recipient' : { 'id' : user_id }, 'message' :  'texto legal' }
                 - Este pode ser um payload gerado pelos método:
                     - send_buttons();
-                    - send_media_attached().
+                    - send_media_attached();
+                    - send_message().
 
             :return void
         '''
@@ -28,6 +29,26 @@ class Dialog(object):
             'https://graph.facebook.com/v2.6/me/messages/?access_token=' + FB_SITE_TOKEN,
             json = payload
         )
+
+    @staticmethod
+    def send_message(text, user_id):
+        '''
+            Método para enviar mensagens simples.
+
+            :param text: str (Texto a ser enviado)
+            :return void
+        '''
+
+        payload = {
+                'recipient' : {
+                        'id' : user_id
+                    },
+                'message' : {
+                        'text': text
+                    }
+                }
+
+        Dialog.send_payload(payload)
 
 
     @staticmethod

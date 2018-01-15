@@ -1,5 +1,7 @@
 import json
 
+from bot import db
+
 class ToolBox(object):
     '''
         Classe que métodos úteis ao funcionamento do bot
@@ -21,3 +23,15 @@ class ToolBox(object):
             except BaseException as e:
                 print(e)
                 return [ -1, -1 ]
+
+    @staticmethod
+    def register_user(user):
+        '''
+            Método para registrar novos usuários
+
+            :param user: User
+            :return void
+        '''
+
+        db.session.add(user)
+        db.session.commit()
