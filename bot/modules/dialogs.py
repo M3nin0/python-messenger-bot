@@ -46,7 +46,7 @@ class Dialog(object):
         '''
 
         requests.post(
-                'https://graph.facebook.com/v2.6/me/messenger_profile?access_token=' + FB_VERIFY_TOKEN,
+                'https://graph.facebook.com/v2.6/me/messenger_profile?access_token=' + FB_SITE_TOKEN,
                 json = payload
             )
 
@@ -133,7 +133,7 @@ class Dialog(object):
         
 
     @staticmethod
-    def get_fb_date(user_id, fb_site_token):
+    def get_fb_date(user_id):
         '''
             Método que coleta informações do usuário através do user_id
 
