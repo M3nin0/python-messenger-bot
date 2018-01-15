@@ -11,19 +11,21 @@ Esta template foi criada utilizando os principios do Flask, desta forma há um m
 Os métodos já criados e disponíveis para uso são:
 
  - [X] send_greeting;
-    - Método que prepara o payload de greeting
+    - Método que prepara o payload de greeting.
  - [X] send_get_started;
-    - Método para enviar o get_started
+    - Método para enviar o get_started.
  - [X] send_buttons;
-    - Método para enviar botões
+    - Método para enviar botões.
  - [X] send_media_attached;
-    - Método para fazer o envio de medias (Videos, images)
+    - Método para fazer o envio de medias (Videos, images).
  - [X] send_payload;
-    - Método para envio de payloads
+    - Método para envio de payloads.
  - [X] get_fb_date;
-    - Método que coleta informações do usuário através do user_id
- - [X] send_config.
-    - Método para envio de payloads de configuração
+    - Método que coleta informações do usuário através do user_id.
+ - [X] send_config;
+    - Método para envio de payloads de configuração.
+-  [X] send_message;
+    - Método para fazer envio de mensagens simples.
 
 ## Armazenamento 
 
