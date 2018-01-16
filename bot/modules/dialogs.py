@@ -111,7 +111,7 @@ class Dialog(object):
         '''
             Método para enviar botões
 
-            :param buttons: list (Template dos botões que serão usados)
+            :param buttons: list (Coleção do tipo Botão)
                 Exemplo:
                     [ {'type' : 'postback', 'title' : 'Button title', 'payload' : 'text'} ]
             :param text: str (Texto que será exibido junto aos botões)
@@ -120,15 +120,25 @@ class Dialog(object):
             :return dict
         '''
 
-        return { 'recipient' : { 'id' : user_id },
-                 'message'   : { 'attachment' : {
+        _buttons = []
+
+        # Criando os dicionários dos botões
+        for button in buttons:
+            _buttons.append(
+                    {'type': button.type_button,
+                     'title': button.title,
+                     'payload': button.payload_text})
+
+        payload = { 'recipient' : { 'id' : user_id },
+                    'message'   : { 'attachment' : {
                      'type' : 'template',
                      'payload': {
                       'template_type' : 'button',
                       'text' : text,
-                      'buttons' : buttons
+                      'buttons' : _buttons[0:-1]
                      } } } }
-    
+
+        Dialog.send_payload(payload)    
     
     @staticmethod
     def send_media_attached(typem, user_id, media_id):
@@ -151,7 +161,7 @@ class Dialog(object):
                     'type': typem,
                     'payload': { 'attachment_id' : media_id }
                 } } }
-        
+
 
     @staticmethod
     def get_fb_date(user_id):
