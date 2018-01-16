@@ -85,12 +85,14 @@ class Dialog(object):
             :return dict
         '''
         
-        return {'greeting': [
+        payload = {'greeting': [
                         {'locale': 'default',
                         'text': text_default } , {
                         'locale': locale,
                         'text': text_for_locale
                         }]}
+
+        Dialog.send_config(payload)
 
 
     @staticmethod
@@ -103,7 +105,9 @@ class Dialog(object):
             :return dict 
         '''
         
-        return { 'get_started' : {  'payload' : text  } }
+        payload = { 'get_started' : {  'payload' : text  } }
+
+        Dialog.send_config(payload)
 
 
     @staticmethod
@@ -135,7 +139,7 @@ class Dialog(object):
                      'payload': {
                       'template_type' : 'button',
                       'text' : text,
-                      'buttons' : _buttons[0:-1]
+                      'buttons' : _buttons[0:]
                      } } } }
 
         Dialog.send_payload(payload)    
