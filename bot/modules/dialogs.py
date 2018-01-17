@@ -168,6 +168,39 @@ class Dialog(object):
 
 
     @staticmethod
+    def send_persistent_simple_menu(menu_itens):
+        '''
+            Método para fazer o envio de menu persistentes
+
+            :param menu_itens: list (Coleção de opções para o menu)
+            :return void
+        '''
+        _menu_itens = []
+
+        for item in menu_itens:
+            _menu_itens.append(
+                    {'title': item.title,
+                     'type': item.item_type,
+                     'payload': item.payload
+                     }
+                )
+
+        payload = {
+                  "persistent_menu":[
+                    {
+                      "locale":"default",
+                      "composer_input_disabled": "true",
+                      "call_to_actions":[
+                    {
+                        "title":"Conta legal",
+                        "type":"nested",
+                        "call_to_actions": _menu_itens[0:]
+                        } ] } ] }
+
+        Dialog.send_config(payload)
+
+
+    @staticmethod
     def get_fb_date(user_id):
         '''
             Método que coleta informações do usuário através do user_id
