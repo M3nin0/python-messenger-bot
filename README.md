@@ -83,10 +83,8 @@ Os métodos já criados e disponíveis para uso são:
     - Método para envio de payloads de configuração.
 -  [X] send_message;
     - Método para fazer envio de mensagens simples.
-<<<<<<< HEAD
 -  [X] send_persistent_simple_menu;
     - Método para fazer o envio de menu persistente.
-=======
     
 ## Sobre
 
@@ -94,4 +92,3 @@ Bot criado utilizando:
 * Flask;
 * SQLAlchemy;
 * Requests.
->>>>>>> 48699260757d1191586cb246e29216239cc95747
