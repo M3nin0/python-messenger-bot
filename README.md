@@ -10,6 +10,58 @@ Esta template foi criada utilizando os principios do Flask, desta forma há um m
 
 Para armazenar os dados dos usuário que utilizaram o bot, há o SQLite que faz o armazenamento das informações básicas do usuário (Nome, sobrenome, gênero, id).
 
+## Implementando bot com a template
+
+Para realizar a implementação é bastante simples, será necessário utilizar o <code>ngrok</code>, nele será aberto um servidor na porta **5000**.
+
+No Linux, após baixar o ngrok, o comando a ser executado é mostrado abaixo:
+
+```shell
+chmod +x ngrok
+./ngrok http 5000
+```
+
+Configure também um virtualenv, para que você não tenha problemas com dependências, para isso faça:
+* Linux
+```shell
+# Cria o virtualenv
+virtualenv venv
+# Ativa
+source venv/bin/activate
+# Instala dependências
+pip install -r requirements.txt
+
+# Caso queira sair do virtualenv use:
+deactivate
+```
+
+OBS: O comando **virtualenv** pode variar de acordo com sua configuração de path.
+
+
+Agora configure o arquivo <code>config.json</code> com suas tokens, o arquivo fica parecido com o exemplo abaixo:
+
+```python
+{
+
+  "tokens": {
+
+    "fb_site_token": "Token da página",
+
+    "fb_verify_token": "Token de verificação usado pelo Facebook"
+
+  }
+
+}
+```
+
+OBS: Lembre-se, a chave de verificação deve ser posta no **webhook** da página, no Facebook.
+
+Após realizar estas configurações, basta inserir seus controles de fluxo no arquivo <code>chat.py</code> e pronto sua aplicação estará funcionando!
+
+### Exemplo de implementação
+
+Um exemplo de implementação feita com a template é o [Beauty BOT](https://github.com/M3nin0/python-messenger-bot)
+
 ## Métodos
 
 Os métodos já criados e disponíveis para uso são:
@@ -31,5 +83,15 @@ Os métodos já criados e disponíveis para uso são:
     - Método para envio de payloads de configuração.
 -  [X] send_message;
     - Método para fazer envio de mensagens simples.
+<<<<<<< HEAD
 -  [X] send_persistent_simple_menu;
     - Método para fazer o envio de menu persistente.
+=======
+    
+## Sobre
+
+Bot criado utilizando:
+* Flask;
+* SQLAlchemy;
+* Requests.
+>>>>>>> 48699260757d1191586cb246e29216239cc95747
