@@ -31,3 +31,5 @@ Os métodos já criados e disponíveis para uso são:
     - Método para envio de payloads de configuração.
 -  [X] send_message;
     - Método para fazer envio de mensagens simples.
+-  [X] send_persistent_simple_menu;
+    - Método para fazer o envio de menu persistente.
