@@ -60,7 +60,7 @@ Após realizar estas configurações, basta inserir seus controles de fluxo no a
 
 ### Exemplo de implementação
 
-Um exemplo de implementação feita com a template é o [Beauty BOT](https://github.com/M3nin0/python-messenger-bot)
+Um exemplo de implementação feita com a template é o [Beauty BOT](https://github.com/M3nin0/beauty-bot)
 
 ## Métodos
 
